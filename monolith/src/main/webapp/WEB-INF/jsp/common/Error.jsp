@@ -15,8 +15,8 @@
        limitations under the License.
 
 --%>
-<%@ include file="../common/IncludeTop.jsp"%>
+<%@ include file="IncludeTop.jsp"%>
 
 <stripes:messages />
 
-<%@ include file="../common/IncludeBottom.jsp"%>
+<%@ include file="IncludeBottom.jsp"%>
