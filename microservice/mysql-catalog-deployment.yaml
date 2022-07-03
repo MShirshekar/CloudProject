@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yaml
+    kompose.version: 1.26.1 (a9d05d509)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: mysql-catalog
+  name: mysql-catalog
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: mysql-catalog
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -f docker-compose.yaml
+        kompose.version: 1.26.1 (a9d05d509)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: mysql-catalog
+    spec:
+      containers:
+        - args:
+            - --default-authentication-plugin=mysql_native_password
+          env:
+            - name: MYSQL_DATABASE
+              value: jpetstore
+            - name: MYSQL_PASSWORD
+              value: test
+            - name: MYSQL_ROOT_PASSWORD
+              value: test
+          image: mysql:8.0
+          name: mysql-catalog
+          ports:
+            - containerPort: 3306
+          resources: {}
+          volumeMounts:
+            - mountPath: /docker-entrypoint-initdb.d
+              name: mysql-catalog-claim0
+            - mountPath: /etc/mysql/my.cnf
+              name: mysql-catalog-claim1
+      restartPolicy: Always
+      volumes:
+        - name: mysql-catalog-claim0
+          persistentVolumeClaim:
+            claimName: mysql-catalog-claim0
+        - name: mysql-catalog-claim1
+          persistentVolumeClaim:
+            claimName: mysql-catalog-claim1
+status: {}
