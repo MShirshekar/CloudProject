@@ -29,7 +29,7 @@ spec:
           env:
             - name: JAVA_OPTS
               value: '"-Xmx150m"'
-          image: api-order
+          image: mousavil/microservice_api-order
           name: api-order
           ports:
             - containerPort: 8080

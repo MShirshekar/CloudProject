@@ -29,7 +29,7 @@ spec:
           env:
             - name: JAVA_OPTS
               value: '"-Xmx150m"'
-          image: jpstore_api-account
+          image: mousavil/microservice_api-account:latest
           name: api-account
           ports:
             - containerPort: 8080
