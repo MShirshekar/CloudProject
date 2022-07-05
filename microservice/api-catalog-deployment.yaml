@@ -30,6 +30,7 @@ spec:
             - name: JAVA_OPTS
               value: '"-Xmx150m"'
           image: mousavil/microservice_api-catalog
+          imagePullPolicy: Never
           name: api-catalog
           ports:
             - containerPort: 8080
