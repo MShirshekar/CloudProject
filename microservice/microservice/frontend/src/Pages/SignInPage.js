@@ -47,7 +47,7 @@ const SignInPage = () => {
               <Form.Label>Username</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter email"
+                placeholder="Enter UserId"
                 // id="username"
               />
             </Form.Group>

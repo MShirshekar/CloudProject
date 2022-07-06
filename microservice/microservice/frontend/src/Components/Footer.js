@@ -20,13 +20,10 @@ const Footer = () => {
       <hr />
       <div>
         <p>
-          This webapp is a microservices based re-enactment of an existing
-          monolithic jPetStore project.
+          microservice base of monolithic of jpet project
         </p>
         <p>
-          This is submitted for partial fulfillment of Master's in Computer
-          Science(M.Sc Computer Science), by Utkarsh Singh and Adarsh Kumar
-          Yadav
+          FUM
         </p>
       </div>
     </div>
